@@ -15,7 +15,7 @@ import {
   LabelButton,
   Action
 } from "./styles";
-import * as color from "../../../variables";
+import * as color from "../../constants/colors";
 
 const BannerSingle = ({ gym }) => {
   const navigation = useNavigation();

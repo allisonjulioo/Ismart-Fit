@@ -12,7 +12,7 @@ import {
   PriceSm,
   Action
 } from "./styles";
-import { grey } from "../../../variables";
+import { grey } from "../../constants/colors";
 
 const BannerPromo = () => {
   const navigation = useNavigation();

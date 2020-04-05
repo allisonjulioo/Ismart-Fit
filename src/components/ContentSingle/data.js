@@ -1,5 +1,5 @@
 import { Dimensions } from "react-native";
-import { black, white, secondary } from "../../../variables";
+import { black, white, secondary } from "../../constants/colors";
 import image from "../../assets/img/estacao.jpg";
 import peso from "../../assets/img/peso.png";
 import estacione from "../../assets/img/estacione.png";

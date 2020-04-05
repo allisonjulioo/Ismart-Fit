@@ -1,5 +1,5 @@
 import { Animated, Platform } from "react-native";
-import * as color from "../../../variables";
+import * as color from "../../constants/colors";
 import styled from "styled-components";
 
 export const Container = styled(Animated.View)`

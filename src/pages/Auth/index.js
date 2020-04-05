@@ -1,6 +1,7 @@
 import React, { useState, createRef } from "react";
+import { useNavigation } from "@react-navigation/native";
 import { Text, Modal } from "react-native";
-import { secondary } from "../../../variables";
+import { secondary } from "../../constants/colors";
 import {
   Container,
   Header,
@@ -17,7 +18,7 @@ import {
   ModalHeader,
   ModalPicture,
   ModalText,
-  ModalIcon
+  ModalIcon,
 } from "./styles";
 
 import logoImg from "./../../assets/img/logo-black.png";
@@ -33,21 +34,23 @@ const Auth = () => {
   const mockCpf = "000.000.000-00";
   const mockPass = "a";
 
+  const navigation = useNavigation();
   const nextStep = async () => {
-    if (activeStep === mockCpf) {
+    if (cpf == mockCpf && activeStep === 0) {
+      setActiveStep(1);
+      setModalVisible(!modalVisible);
+    } else if (activeStep === 1) {
       login();
-    } else if (cpf != mockCpf) {
-      setCpfError(true);
     } else {
-      setModalVisible(true);
-      setCpfError(false);
+      setCpfError(true);
     }
   };
   const login = async () => {
-    if (password != mockPass) {
-      setPasswordError(true);
-    } else {
+    if (password == mockPass && activeStep === 1) {
       setPasswordError(false);
+      navigation.navigate("Home");
+    } else {
+      setPasswordError(true);
     }
   };
   const closeModalFinger = () => {
@@ -68,7 +71,7 @@ const Auth = () => {
           type={"cpf"}
           maxLength={14}
           value={cpf}
-          onChange={cpf => setCpf(cpf.nativeEvent.text)}
+          onChange={(cpf) => setCpf(cpf.nativeEvent.text)}
           style={{ borderBottomColor: cpfError ? secondary : "transparent" }}
         />
         {cpfError && <Icon name="x" color={secondary} />}
@@ -79,9 +82,9 @@ const Auth = () => {
             type={"custom"}
             placeholder="DIGITE SUA SENHA"
             secureTextEntry={true}
-            onChange={pass => setPassword(pass.nativeEvent.text)}
+            onChange={(pass) => setPassword(pass.nativeEvent.text)}
             style={{
-              borderBottomColor: passwordError ? secondary : "transparent"
+              borderBottomColor: passwordError ? secondary : "transparent",
             }}
           />
           {passwordError && <Icon name="x" color={secondary} />}

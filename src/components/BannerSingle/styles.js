@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Constants from "expo-constants";
-import * as color from "../../../variables";
-import * as system from "../../../styles";
+import * as color from "../../constants/colors";
+import * as system from "../../constants/styles";
 
 export const Banner = styled.View`
   position: relative;

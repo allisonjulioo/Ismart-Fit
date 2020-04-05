@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import * as color from "../../../variables";
-import { ButtonSmall } from "../../../styles";
+import * as color from "../../constants/colors";
+import { ButtonSmall } from "../../constants/styles";
 
 export const Container = styled.View`
   background-color: ${color.black};

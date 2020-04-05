@@ -6,7 +6,7 @@ import {
   ButtonSecondary,
   TextPrimary,
   TextSecondary
-} from "../../../styles";
+} from "../../constants/styles";
 
 import logoImg from "./../../assets/img/logo-black.png";
 import SplashCarousel from "./../../components/Carousel/";

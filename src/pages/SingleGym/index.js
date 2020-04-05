@@ -58,7 +58,7 @@ const SingleGym = state => {
   });
   const promoTranslate = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE + 150],
-    outputRange: [150, 0],
+    outputRange: [0, 150],
     extrapolate: "clamp"
   });
 

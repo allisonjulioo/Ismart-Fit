@@ -1,5 +1,5 @@
 import styled from "styled-components"; 
-import { black, grey } from "../../../variables";
+import { black, grey } from "../../constants/colors";
 
 // padding-top: ${Constants.statusBarHeight}px;
 // padding-bottom: ${Constants.statusBarHeight}px;

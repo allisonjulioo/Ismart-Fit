@@ -1,30 +1,26 @@
-import { StyleSheet, Dimensions } from "react-native";
-import Constants from "expo-constants";
+import styled from "styled-components/native";
+import { Dimensions } from "react-native";
+import MapView from "react-native-maps";
+import * as color from "../../constants/colors";
 
-export default StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "space-between"
-  },
-  header: {
-    paddingHorizontal: 16,
-    paddingTop: Constants.statusBarHeight + 20,
-    backgroundColor: "#1F2123",
-    minHeight: 110
-  },
-  firstHeader: {
-    width: "100%",
-    flexDirection: "row",
-    display: "flex",
-    alignItems: "center"
-  },
-  headerText: {
-    marginLeft: 16,
-    color: "#B8B8B8"
-  },
-  mapStyle: {
-    width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height
-  }
-});
+export const Container = styled.View`
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+export const Header = styled.View``;
+export const Map = styled(MapView)`
+  width: ${Dimensions.get("window").width}px;
+  height: ${Dimensions.get("window").height}px;
+`;
+export const MarkerPin = styled.View`
+  background: ${color.black};
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+`;
+export const MarkerIcon = styled.Image``;

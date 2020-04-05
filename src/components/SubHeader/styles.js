@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import * as color from "../../../variables";
+import * as color from "../../constants/colors";
 
 export const Locale = styled.View`
   padding: 12px 0;

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import Constants from "expo-constants";
-import * as color from "../../../variables";
 import { Feather } from "@expo/vector-icons";
 import { TextInputMask } from "react-native-masked-text";
-import { Button, TextPrimary } from "../../../styles";
+import * as color from "../../constants/colors";
+import { Button, TextPrimary } from "../../constants/styles";
 
 export const Container = styled.View`
   flex: 1;

@@ -1,4 +1,4 @@
-import * as color from "../../../variables";
+import * as color from "../../constants/colors";
 
 export const common = {
   cardStyle: { backgroundColor: color.white },

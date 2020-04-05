@@ -1,14 +1,14 @@
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 import { Locale, Content, Address, Small, Bold, Pin, PinText } from "./styles";
-import { primary } from "../../../variables";
+import { primary } from "../../constants/colors";
 
 const SubHeader = () => {
   return (
     <Locale>
       <Address>
         <Small>Academias próximas a:</Small>
-        <Bold>Rua Brasil, 100</Bold>
+        <Bold>UAI Praça Sete</Bold>
         <Small>Centro, Belo Horizonte, Minas Gerais</Small>
       </Address>
       <Content>

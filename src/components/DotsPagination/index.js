@@ -1,6 +1,6 @@
 import React from "react";
 import { Pagination, DotPagination } from "./styles";
-import { primary, white } from "../../../variables";
+import { primary, white } from "../../constants/colors";
 
 const DotsPagination = ({ items, activeIndex }) => (
   <Pagination>

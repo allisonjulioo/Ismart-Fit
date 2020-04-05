@@ -2,7 +2,7 @@ import React from "react";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { MyTabs, Tab, Label } from "./styles";
-import * as color from "../../../variables";
+import * as color from "../../constants/colors";
 
 const Tabs = () => {
   const navigation = useNavigation();

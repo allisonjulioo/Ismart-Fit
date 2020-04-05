@@ -106,16 +106,4 @@ const ContentSingle = () => {
   );
 };
 export default ContentSingle;
-
-/*
-{data.map((_, i) => (
-  <Content key={i}>
-    <Title>Galeria</Title>
-    <Picture
-      source={image}
-      style={{ height: 152, resizeMode: "contain" }}
-    />
-    <Title>{i}</Title>
-  </Content>
-))}
-*/
+ 

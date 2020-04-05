@@ -26,7 +26,7 @@ import {
   PriceLg,
   PriceSm
 } from "./styles";
-import * as color from "../../../variables";
+import * as color from "../../constants/colors";
 
 import peso from "../../assets/img/peso.png";
 import anilha from "../../assets/img/anilha.png";
