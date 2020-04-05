@@ -18,59 +18,59 @@ import {
   Header,
   Content,
   Bar,
-  Promo
+  Promo,
 } from "./styles";
 
 import Banner from "../../components/BannerSingle";
 import ContentSingle from "../../components/ContentSingle";
 import BannerPromo from "../../components/BannerPromo";
 
-const SingleGym = state => {
+const SingleGym = (state) => {
   const route = useRoute();
   const gym = route.params.gym;
   const navigation = useNavigation();
 
   state = {
-    scrollY: new Animated.Value(0)
+    scrollY: new Animated.Value(0),
   };
   const scrollY = Animated.add(state.scrollY, 0);
 
   const headerTranslate = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE],
     outputRange: [0, -HEADER_SCROLL_DISTANCE],
-    extrapolate: "clamp"
+    extrapolate: "clamp",
   });
 
   const bannerOpacity = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
     outputRange: [1, 1, 0],
-    extrapolate: "clamp"
+    extrapolate: "clamp",
   });
   const titleOpacity = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
     outputRange: [0, 0, 1],
-    extrapolate: "clamp"
+    extrapolate: "clamp",
   });
   const bannerTranslate = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE],
     outputRange: [0, 100],
-    extrapolate: "clamp"
+    extrapolate: "clamp",
   });
   const promoTranslate = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE + 150],
-    outputRange: [0, 150],
-    extrapolate: "clamp"
+    outputRange: [HEADER_SCROLL_DISTANCE + 350, 0],
+    extrapolate: "clamp",
   });
 
   const titleScale = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
     outputRange: [1, 1, 0.8],
-    extrapolate: "clamp"
+    extrapolate: "clamp",
   });
   const titleTranslate = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
     outputRange: [0, 0, -8],
-    extrapolate: "clamp"
+    extrapolate: "clamp",
   });
   return (
     <Container>
@@ -88,7 +88,7 @@ const SingleGym = state => {
         <ContentBanner
           style={{
             opacity: bannerOpacity,
-            transform: [{ translateY: bannerTranslate }]
+            transform: [{ translateY: bannerTranslate }],
           }}
         >
           <Banner gym={gym} />
@@ -96,13 +96,13 @@ const SingleGym = state => {
       </Header>
       <Bar
         style={{
-          transform: [{ scale: titleScale }, { translateY: titleTranslate }]
+          transform: [{ scale: titleScale }, { translateY: titleTranslate }],
         }}
       >
         <Navigation
           style={{
             opacity: titleOpacity,
-            transform: [{ scale: titleScale }, { translateY: titleTranslate }]
+            transform: [{ scale: titleScale }, { translateY: titleTranslate }],
           }}
         >
           <NavigationContent>
@@ -121,7 +121,7 @@ const SingleGym = state => {
       </Bar>
       <Promo
         style={{
-          transform: [{ translateY: promoTranslate }]
+          transform: [{ translateY: promoTranslate }],
         }}
       >
         <BannerPromo />
